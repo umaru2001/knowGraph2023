@@ -1,62 +1,79 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.app-root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(./images/nature.jpeg);
+  filter: brightness(0.4);
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.title {
+  border-radius: 50%;
+  height: 45vh;
+  width: 45vh;
+  background-color: rgba(245, 255, 250, 0.6);
+  margin-right: 13vh;
+
+  .title-picture {
+    position: relative;
+    top: 9vh;
+    left: 3vh;
+    width: 38vh;
+    height: 26vh;
+  }
+}
+
 .app-root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  font-size: 36px;
-  margin: 15px 0 20px;
-  width: 65vw;
-  text-align: center;
-}
-
-.article-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 20px 20px;
-}
-
-.article-info p {
-  margin: 0;
-  padding: 5px 10px;
-}
-
-.article-info .article-date {
-  background-color: #eee;
-  border-radius: 5px;
-}
-
-.article-info .article-source {
-  font-style: italic;
-}
-
-.article-content {
-  margin: 0 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.form {
+  margin-top: 20px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 10vh;
-  width: 100%;
-
-  .form-input {
-    width: 40vw;
-  }
-
-  .form-submit {
-    margin-left: 20px;
-  }
-}
-
-.article-content {
-  width: 60vw;
 }
