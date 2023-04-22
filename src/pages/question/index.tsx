@@ -4,10 +4,7 @@ import axios from 'axios';
 import { SearchOutlined } from '@ant-design/icons';
 import { Article } from './type';
 import './index.less';
-
-const TEST_URL = 'http://localhost:8000/api/test';
-
-const RESEARCH_URL = 'http://localhost:8001/api/chairman/search/';
+import { RESEARCH_URL } from '../url';
 
 const Question: React.FC = () => {
   const [article, setArticle] = useState<Article[] | null>();

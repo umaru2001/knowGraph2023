@@ -1,0 +1,100 @@
+.login-root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/nature.jpeg);
+  filter: brightness(0.4);
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.login-root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(245, 255, 250, 0.6);
+  border-radius: 160px;
+  width: 840px;
+  height: 320px;
+}
+
+.login-form-container {
+  width: 280px;
+  transform: translateX(-13px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-title {
+  width: 335px;
+  height: 240px;
+}
+
+.login-form-label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.ant-form-item {
+  margin-bottom: 20px;
+}
+
+.ant-form-item-label {
+  font-weight: bold;
+}
+
+.ant-input {
+  background-color: transparent;
+  border-color: rgb(245, 255, 250);
+  width: 250px;
+}
+
+.ant-input:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.ant-input-password {
+  background-color: transparent;
+  border-color: rgb(245, 255, 250);
+  width: 250px;
+}
+
+.ant-input-password:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.ant-btn-primary {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+.login-form-button {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}

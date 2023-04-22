@@ -4,7 +4,10 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [{ path: '/', component: '@/pages/index' }],
+  routes: [
+    { path: '/', component: '@/pages/index' },
+    { path: '/login', component: '@/pages/login/index' },
+  ],
   fastRefresh: {},
   mfsu: {},
   devServer: {
@@ -13,7 +16,7 @@ export default defineConfig({
     },
     proxy: {
       '/api': {
-        pathRewrite: {'^/api' : ''},
+        pathRewrite: { '^/api': '' },
         target: 'http://localhost:3000',
         changeOrigin: true,
       },
