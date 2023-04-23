@@ -2,57 +2,70 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 93vh;
+  height: 97vh;
   width: 60vw;
 }
 
-h1.article-title {
-  font-size: 36px;
-  margin: 15px 0 20px;
-  width: 65vw;
-  text-align: center;
-}
-
-.article-info {
+.chats {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin: 0 20px 20px;
-}
-
-.pagination {
-  margin-top: 20px;
-}
-
-.article-info p {
-  margin-top: 20px;
-  padding: 5px 10px;
-}
-
-.article-info .article-date {
-  background-color: #eee;
-  border-radius: 5px;
-}
-
-.article-info .article-source {
-  font-style: italic;
-}
-
-.article-content {
-  margin: 0 20px 18px;
-  padding: 20px;
-  line-height: 26px;
-  font-size: 22px;
+  width: 100%;
+  border-radius: 40px;
+  background-color: rgba(245, 255, 250, 0.6);
+  height: 70vh;
+  margin-top: 5vh;
+  padding-top: 25px;
   overflow: scroll;
-  max-height: 53vh;
+
+  .chat-wrapper {
+    width: 85%;
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-start;
+
+    .portrait {
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .chat-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 12px;
+      transform: translateY(7px);
+
+      .content {
+        font-size: 16px;
+        margin-top: 8px;
+        background-color: #ccffcc;
+        border-radius: 8px;
+        padding: 12px;
+      }
+    }
+
+    .chat-text.bot {
+      color:#4169E1;
+
+      .content {
+        color: white;
+        font-size: 16px;
+        margin-top: 8px;
+        background-color: #1E90FF;
+        border-radius: 8px;
+        padding: 12px;
+      }
+    }
+  }
 }
 
 .input {
   background-color: transparent;
   border: none;
   outline: none;
-  color: white;
   height: 40px;
 }
 
@@ -61,30 +74,20 @@ h1.article-title {
   align-items: center;
   justify-content: center;
   height: 7vh;
-  width: 80%;
+  width: 100%;
   border-radius: 50px;
   background-color: rgba(245, 255, 250, 0.6);
+  margin-top: 60px;
 
   .ant-form-item {
     margin: 0;
   }
 
   .form-input {
-    width: 40vw;
+    width: 90%;
   }
 
   .form-submit {
     margin-left: 20px;
   }
 }
-
-.article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  border-radius: 20px;
-  background-color: rgba(245, 255, 250, 0.6);
-  margin-top: 5vh;
-}
-

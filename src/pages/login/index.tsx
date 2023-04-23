@@ -31,10 +31,10 @@ const Login: React.FC = () => {
       if (r) {
         message.success('登录成功！');
       } else {
-        message.success('账号或者密码错误！');
+        message.error('账号或者密码错误！');
       }
     }, (e) => {
-      message.success('账号或者密码错误！');
+      message.error('账号或者密码错误！');
     })
   };
 
