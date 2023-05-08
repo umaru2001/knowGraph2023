@@ -5,7 +5,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import './index.less';
 import bot from '../images/bot.png';
 import user from '../images/user.png';
-import { RESEARCH_URL } from '../url';
+import { QUESTION_URL } from '../url';
 
 function getCurrentTime(): string {
   const now = new Date();
@@ -33,15 +33,22 @@ const Question: React.FC = () => {
 
   const handleQuestion = () => {
     const keyword = form.getFieldValue('keyword');
-    if (keyword === '') {
+    if (!keyword || keyword === '') {
       message.error('请输入内容！');
       return;
     }
-    setChats([
-      ...chats,
-      ['User', getCurrentTime(), keyword],
-      ['Robot', getCurrentTime(), '抱歉，此问题我暂时还无法回答喵！'],
-    ]);
+    const tempArr: [string, string, string][] = [...chats, ['User', getCurrentTime(), keyword]];
+    setChats(tempArr);
+    fetchData<{success: number, data: string[]}>(`${QUESTION_URL}${keyword}`).then((r) => {
+      const { success, data } = r;
+      let updatedArr: [string, string, string][];
+      if (success === 1) {
+        updatedArr = [...tempArr, ['Robot', getCurrentTime(), data.join('，')]];
+      } else {
+        updatedArr = [...tempArr, ['Robot', getCurrentTime(), '抱歉，该问题暂时不被支持。']];
+      }
+      setChats(updatedArr);
+    })
   };
 
   const renderAChat = (chat: [string, string, string], key: string) => {
